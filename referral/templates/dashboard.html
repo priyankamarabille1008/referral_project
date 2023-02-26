@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Welcome, {{ user.name }}!</h1>
+  {% if user.referral_code %}
+    <p>Your referral code is: {{ user.referral_code }}</p>
+    <p>{{ user.num_referrals }} users joined using your code.</p>
+  {% endif %}
+  <h2>Refer a Friend</h2>
+  <p>Share your referral code with friends to earn rewards:</p>
+  <textarea>{{ user.referral_link }}</textarea>
+{% endblock %}
